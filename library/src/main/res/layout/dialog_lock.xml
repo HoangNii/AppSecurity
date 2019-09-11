@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/dialog_lock"
+    android:background="#555"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:background="?selectableItemBackground"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_menu_add"
+        android:id="@+id/bt_back"
+        android:layout_width="50dp"
+        android:layout_height="?actionBarSize"/>
+    <com.hoangit.library.AppSecurityView
+        android:id="@+id/security_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

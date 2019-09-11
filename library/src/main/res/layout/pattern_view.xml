@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true">
+    <TextView
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_title"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#fff"
+        android:text="Vẽ hình mở khóa của bạn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_body"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff"
+        android:text="Kết nối ít nhất 4 điểm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/viewIn"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        tools:ignore="ContentDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgIn1"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_indicator_lock"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+        <ImageView
+            android:id="@+id/imgIn2"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_indicator_lock"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+        <ImageView
+            android:id="@+id/imgIn3"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_indicator_lock"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+        <ImageView
+            android:id="@+id/imgIn4"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_indicator_lock"
+            android:layout_width="15dp"
+            android:layout_height="15dp" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.hoangit.library.pattern.Lock9View
+            android:id="@+id/lock_9_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:layout_gravity="center"
+            app:lock9_nodeSrc="@drawable/node_normal"
+            app:lock9_nodeOnSrc="@drawable/node_active"
+            app:lock9_nodeOnAnim="@anim/node_on"
+            app:lock9_nodeSize="16dp"
+            app:lock9_nodeAreaExpand="24dp"
+            app:lock9_lineColor="#fff"
+            app:lock9_lineWidth="4dp"
+            app:lock9_autoLink="true"
+            app:lock9_enableVibrate="true"
+            app:lock9_vibrateTime="20" />
+    </FrameLayout>
+
+
+</LinearLayout>
