@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
     <androidx.appcompat.widget.AppCompatImageView
         android:background="?selectableItemBackground"
-        android:padding="10dp"
+        android:padding="15dp"
         android:src="@android:drawable/ic_menu_add"
         android:id="@+id/bt_back"
         android:layout_width="50dp"
