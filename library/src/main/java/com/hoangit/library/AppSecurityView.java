@@ -62,7 +62,7 @@ public class AppSecurityView extends FrameLayout {
         TextView tvChangeType = view.findViewById(R.id.tv_change_type);
         ImageView imgChangeType = view.findViewById(R.id.img_type);
         if(AppSecurityConfig.getTypeSecurity(getContext())==AppSecurityConfig.NO){
-            tvChangeType.setText("  THAY ĐỔI HÌNH  ");
+            tvChangeType.setText("  Change To Pattern  ");
             imgChangeType.setImageResource(R.drawable.ic_pattern);
             tvChangeType.setSelected(true);
             tvChangeType.setOnClickListener(new OnClickListener() {
@@ -72,14 +72,14 @@ public class AppSecurityView extends FrameLayout {
                         passCodeView.setVisibility(GONE);
                         patternView.setVisibility(VISIBLE);
                         passCodeView.clear();
-                        tvChangeType.setText("  THAY ĐỔI MÃ PIN  ");
+                        tvChangeType.setText("  Change to PIN Code  ");
                         imgChangeType.setImageResource(R.drawable.ic_pin);
                         tvChangeType.setSelected(false);
                     }else {
                         passCodeView.setVisibility(VISIBLE);
                         patternView.setVisibility(GONE);
                         patternView.clear();
-                        tvChangeType.setText("  THAY ĐỔI HÌNH  ");
+                        tvChangeType.setText("  Change To Pattern  ");
                         imgChangeType.setImageResource(R.drawable.ic_pattern);
                         tvChangeType.setSelected(true);
                     }

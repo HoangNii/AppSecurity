@@ -3,16 +3,11 @@ package com.hoangit.appsecurity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
-
 import com.hoangit.library.AppSecurityConfig;
 import com.hoangit.library.AppSecurityView;
-import com.hoangit.library.passcode.PassCodeView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         securityView.init();
         dialog.show();
     }
-
 
     private void showDialogUnlock(){
         Dialog dialog = new Dialog(MainActivity.this,R.style.AppTheme);

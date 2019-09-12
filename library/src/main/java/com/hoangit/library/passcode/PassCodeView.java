@@ -58,18 +58,18 @@ public class PassCodeView extends FrameLayout {
     private void setupKey() {
 
         if(isUnlock){
-            tvTitle.setText("Nhập mã PIN");
+            tvTitle.setText("Input PIN code");
         }else {
             String title;
             if(AppSecurityConfig.getTypeSecurity(getContext())==1){
-                title = "Tắt khóa ứng dụng";
+                title = "Disable PIN code";
             }else {
-                title = "Đặt mã PIN của bạn";
+                title = "Set your PIN code";
             }
             tvTitle.setText(title);
         }
 
-        tvBodyTitle.setText("Nhập 4 chữ số");
+        tvBodyTitle.setText("Enter 4 numbers");
 
         ArrayList<Key> keys = new ArrayList<>();
         keys.add(new Key("1",""));
@@ -158,7 +158,7 @@ public class PassCodeView extends FrameLayout {
             }else {
                 startAnimationError();
                 vibrator(getContext());
-                tvBodyTitle.setText("Sai mã");
+                tvBodyTitle.setText("PINs don't match");
             }
             return;
         }
@@ -193,7 +193,7 @@ public class PassCodeView extends FrameLayout {
         startAnimationError();
         vibrator(getContext());
         passCheck = null;
-        tvTitle.setText("Đặt mã Pin của bạn");
+        tvTitle.setText("Set your PIN code");
     }
 
     private void startAnimationInputAgain(){
@@ -211,7 +211,7 @@ public class PassCodeView extends FrameLayout {
                         tvTitle.animate().translationX(getContext().getResources().getDisplayMetrics().widthPixels)
                                 .setDuration(0)
                                 .withEndAction(() -> {
-                                    tvTitle.setText("Xác nhận hình của bạn");
+                                    tvTitle.setText("Confirm your PIN");
                                     tvTitle.animate().translationX(0)
                                             .setDuration(200).withEndAction(this::clearIndicator).start();
                                 }).start()).start();

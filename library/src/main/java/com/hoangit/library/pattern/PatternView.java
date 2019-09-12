@@ -50,18 +50,18 @@ public class PatternView extends FrameLayout {
     private void setup() {
 
         if(isUnlock){
-            tvTitle.setText("Vẽ hình mở khóa");
+            tvTitle.setText("Draw unlock pattern");
         }else {
             String title;
             if(AppSecurityConfig.getTypeSecurity(getContext())==AppSecurityConfig.PATTERN){
-                title = "Tắt khóa ứng dụng";
+                title = "Disable unlock pattern";
             }else {
-                title = "Vẽ hình mở khóa của bạn";
+                title = "Draw your unlock pattern";
             }
             tvTitle.setText(title);
         }
 
-        tvBodyTitle.setText("Kết nối ít nhất 4 điểm");
+        tvBodyTitle.setText("Connect at least 4 dots");
 
         lock9View.setGestureCallback(new Lock9View.GestureCallback() {
             @Override
@@ -84,7 +84,7 @@ public class PatternView extends FrameLayout {
                         onListen.onSuccess();
                     }else {
                         vibrator(getContext());
-                        tvBodyTitle.setText("Mẫu sai");
+                        tvBodyTitle.setText("Wrong pattern");
                         startAnimationError();
                     }
                     return;
@@ -98,7 +98,7 @@ public class PatternView extends FrameLayout {
                         vibrator(getContext());
                     }else {
                         vibrator(getContext());
-                        tvBodyTitle.setText("Mẫu sai");
+                        tvBodyTitle.setText("Wrong pattern");
                         startAnimationError();
                     }
                 }else {
@@ -114,8 +114,8 @@ public class PatternView extends FrameLayout {
                         }else {
                             vibrator(getContext());
                             passCheck = null;
-                            tvBodyTitle.setText("Mẫu sai");
-                            tvTitle.setText("Vẽ hình mở khóa của bạn");
+                            tvBodyTitle.setText("Wrong pattern");
+                            tvTitle.setText("Draw your unlock pattern");
                             startAnimationError();
                         }
                     }
@@ -128,8 +128,8 @@ public class PatternView extends FrameLayout {
         startAnimationError();
         vibrator(getContext());
         passCheck = null;
-        tvTitle.setText("Vẽ hình mở khóa của bạn");
-        tvBodyTitle.setText("Kết nối ít nhất 4 điểm");
+        tvTitle.setText("Draw your unlock pattern");
+        tvBodyTitle.setText("Connect at least 4 dots");
     }
 
     private void startAnimationError() {
@@ -165,8 +165,8 @@ public class PatternView extends FrameLayout {
                         tvTitle.animate().translationX(getContext().getResources().getDisplayMetrics().widthPixels)
                                 .setDuration(0)
                                 .withEndAction(() -> {
-                                    tvBodyTitle.setText("Vẽ lại hình mở khóa");
-                                    tvTitle.setText("Xác nhận hình của bạn");
+                                    tvBodyTitle.setText("Draw the pattern again");
+                                    tvTitle.setText("Confirm your pattern");
                                     tvTitle.animate().translationX(0)
                                             .setDuration(200).start();
                                 }).start()).start();
