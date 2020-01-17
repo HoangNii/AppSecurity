@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -27,17 +26,28 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"/>
     </FrameLayout>
-
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="gone"
+            android:id="@+id/img_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
         <com.hoangit.library.passcode.PassCodeView
+            android:layout_above="@+id/ads"
+            android:layout_below="@+id/img_icon"
             android:id="@+id/pass_code_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
         <com.hoangit.library.pattern.PatternView
+            android:layout_above="@+id/ads"
+            android:layout_below="@+id/img_icon"
             android:id="@+id/pattern_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </FrameLayout>
+        <include layout="@layout/ads_footer"/>
+    </RelativeLayout>
 </LinearLayout>
